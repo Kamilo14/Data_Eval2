@@ -22,6 +22,7 @@ USE proyecto_db;
 -- TABLA: usuarios
 -- Almacena información básica de los usuarios del sistema
 -- =====================================================
+DROP TABLE IF EXISTS usuarios;
 
 CREATE TABLE IF NOT EXISTS usuarios (
     -- ID único para cada usuario (clave primaria)
@@ -70,6 +71,7 @@ CREATE INDEX idx_usuarios_nombre_estado ON usuarios(nombre, estado);
 -- =====================================================
 
 -- Insertar usuarios de ejemplo para pruebas iniciales
+
 INSERT INTO usuarios (nombre, email, edad, estado) VALUES
 ('Juan Pérez García', 'juan.perez@ejemplo.com', 28, 'activo'),
 ('María Rodríguez López', 'maria.rodriguez@ejemplo.com', 34, 'activo'),

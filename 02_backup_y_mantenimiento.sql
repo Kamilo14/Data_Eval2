@@ -1,3 +1,4 @@
+USE proyecto_db;
 -- =====================================================
 -- SCRIPTS DE BACKUP Y MANTENIMIENTO
 -- Proyecto: Sistema de Gestión de Usuarios
