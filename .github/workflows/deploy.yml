@@ -1,4 +1,7 @@
 name: Publicar imagen docker
+env:
+#Compatibilidad con Node 24 para acciones de JavaScript
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 on:
   push:
@@ -16,12 +19,12 @@ jobs:
       - name: Iniciar sesion en Docker
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/data-ev2:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/data-ev2:latest
